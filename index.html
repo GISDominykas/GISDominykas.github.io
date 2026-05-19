@@ -2,54 +2,46 @@
 <!-- HTML5 dokumento pradžia -->
 <html lang="lt">
   <head>
-    <!-- Nustatomas simbolių kodavimas, kad lietuviškos raidės būtų rodomos teisingai -->
+    <!-- Lietuviškų simbolių palaikymas -->
     <meta charset="UTF-8" />
 
-    <!-- Leidžia svetainei prisitaikyti prie telefono ir kompiuterio ekrano pločio -->
+    <!-- Svetainės pritaikymas skirtingiems ekranams -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Puslapio pavadinimas, kuris rodomas naršyklės kortelėje -->
+    <!-- Puslapio pavadinimas naršyklės kortelėje -->
     <title>Kauno žemėlapiai</title>
 
-    <!-- Prijungiamas atskiras CSS stiliaus failas -->
+    <!-- Prijungiamas CSS failas -->
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
     <!-- ===== NAV ===== -->
-    <!-- Viršutinė navigacijos juosta -->
-    <!-- Joje pateikiamos pagrindinės svetainės nuorodos -->
+    <!-- Viršutinė navigacija -->
     <nav class="nav">
       <ul class="nav-links">
-        <!-- href="#" palieka vartotoją puslapio pradžioje -->
         <li><a href="#" class="active">Pradžia</a></li>
-
-        <!-- href="#about" nukelia į Apie sekciją tame pačiame puslapyje -->
         <li><a href="#about">Apie</a></li>
-
-        <!-- href="#maps" nukelia į žemėlapių sekciją -->
         <li><a href="#maps">Žemėlapiai</a></li>
-
-        <!-- Atidaro atskirą kontaktų puslapį -->
         <li><a href="kontaktai.html">Kontaktai</a></li>
       </ul>
     </nav>
 
     <!-- ===== HERO ===== -->
-    <!-- Pirmoji svetainės dalis su dideliu pavadinimu ir fonine nuotrauka -->
+    <!-- Pagrindinė svetainės pradžios sekcija su foniniu paveikslėliu -->
     <section class="hero">
-      <!-- Tamsus sluoksnis ant nuotraukos, kad tekstas būtų geriau matomas -->
+      <!-- Užtamsinimo sluoksnis ant paveikslėlio -->
       <div class="hero-overlay"></div>
 
-      <!-- Hero tekstas ir mygtukai -->
+      <!-- Pagrindinis tekstas hero sekcijoje -->
       <div class="hero-content">
         <h1>Kauno žemėlapiai</h1>
         <p>
-          Interaktyvi svetainė, kurioje pateikiami Kepler.gl, Geoportal ir
-          ArcGIS Online žemėlapiai apie Kauną ir erdvinius duomenis.
+          Interaktyvi GIS svetainė, kurioje pateikiami Kepler.gl, Geoportal ir
+          ArcGIS Online žemėlapiai. Kiekvienas žemėlapis turi atskirą puslapį,
+          o pagrindiniame puslapyje pateikiamos jų peržiūros kortelės.
         </p>
 
-        <!-- Mygtukai nukreipia į žemėlapius arba kontaktų puslapį -->
         <div class="hero-buttons">
           <a href="#maps" class="btn btn-primary">Peržiūrėti žemėlapius</a>
           <a href="kontaktai.html" class="btn btn-outline">Kontaktai</a>
@@ -58,7 +50,7 @@
     </section>
 
     <!-- ===== DESCRIPTION ===== -->
-    <!-- Trumpas svetainės paskirties aprašymas -->
+    <!-- Svetainės paskirties aprašymas -->
     <section id="about" class="description">
       <h2>Apie svetainę</h2>
       <p>
@@ -66,139 +58,127 @@
         ankstesnių praktinių darbų metu sukurti interaktyvūs žemėlapiai.
       </p>
       <p>
-        Svetainėje galima peržiūrėti Kauno svarbias vietas, verslui naudingą
-        informaciją, nelaimingų atsitikimų duomenis, pasaulio žemės drebėjimus
-        bei ArcGIS Online objektų registravimo žemėlapius.
+        Pagrindiniame puslapyje pateikiamos žemėlapių kortelės su vaizdais.
+        Paspaudus ant kortelės arba mygtuko, atidaromas atskiras žemėlapio
+        puslapis su integruotu iframe žemėlapiu.
       </p>
     </section>
 
     <!-- ===== MAPS ===== -->
-    <!-- Visi žemėlapiai rodomi vienas po kito -->
+    <!-- Pagrindinė žemėlapių kortelių dalis -->
     <main id="maps" class="maps">
-      <!-- Vienas map-section blokas reiškia vieną žemėlapio skiltį -->
+      <div class="section-title">
+        <span>Interaktyvūs žemėlapiai</span>
+        <h2>Žemėlapių galerija</h2>
+        <p>Pasirinkite žemėlapį ir atidarykite jį atskirame puslapyje.</p>
+      </div>
 
-      <section class="map-section">
-        <div class="map-text">
-          <h2>Kauno svarbios vietos</h2>
-          <p>
-            Žemėlapyje pateikiamos svarbios Kauno miesto vietos ir objektai.
-            Jis padeda susipažinti su miesto erdvine struktūra.
-          </p>
-        </div>
+      <!-- Žemėlapių kortelių tinklelis -->
+      <div class="map-grid">
+        <!-- Kiekviena kortelė yra nuoroda į atskirą žemėlapio puslapį -->
+        <article class="map-card">
+          <a href="pages/map_1.html">
+            <img src="img/map_1.jpg" alt="Kauno svarbios vietos" />
+            <div class="map-card-content">
+              <span>Kepler.gl</span>
+              <h3>Kauno svarbios vietos</h3>
+              <p>Kauno miesto svarbių objektų ir vietų žemėlapis.</p>
+            </div>
+          </a>
+        </article>
 
-        <!-- iframe įkelia išorinį žemėlapio puslapį tiesiai į šią svetainę -->
-        <div class="map-embed">
-          <iframe src="https://gisdominykas.github.io/1_praktinis/map_1.html" title="Kauno svarbios vietos"></iframe>
-        </div>
-      </section>
+        <article class="map-card">
+          <a href="pages/map_2.html">
+            <img src="img/map_2.jpg" alt="Žemės drebėjimai visame pasaulyje" />
+            <div class="map-card-content">
+              <span>Kepler.gl</span>
+              <h3>Žemės drebėjimai visame pasaulyje</h3>
+              <p>Globalus žemės drebėjimų pasiskirstymo žemėlapis.</p>
+            </div>
+          </a>
+        </article>
 
-      <section class="map-section">
-        <div class="map-text">
-          <h2>Žemės drebėjimai visame pasaulyje</h2>
-          <p>
-            Šis Kepler.gl žemėlapis vaizduoja žemės drebėjimų pasiskirstymą
-            pasaulyje ir leidžia analizuoti seisminių įvykių vietas.
-          </p>
-        </div>
-        <div class="map-embed">
-          <iframe src="https://gisdominykas.github.io/1_praktinis/map_2.html" title="Žemės drebėjimai visame pasaulyje"></iframe>
-        </div>
-      </section>
+        <article class="map-card">
+          <a href="pages/map_3.html">
+            <img src="img/map_3.jpg" alt="Verslui naudingas žemėlapis Kaune" />
+            <div class="map-card-content">
+              <span>Kepler.gl</span>
+              <h3>Verslui naudingas žemėlapis Kaune</h3>
+              <p>Verslo objektams ir teritorijoms analizuoti skirtas žemėlapis.</p>
+            </div>
+          </a>
+        </article>
 
-      <section class="map-section">
-        <div class="map-text">
-          <h2>Verslui naudingas žemėlapis Kaune</h2>
-          <p>
-            Žemėlapis skirtas verslui aktualių vietų ir teritorijų analizei
-            Kauno mieste.
-          </p>
-        </div>
-        <div class="map-embed">
-          <iframe src="https://gisdominykas.github.io/1_praktinis/map_3.html" title="Verslui naudingas žemėlapis Kaune"></iframe>
-        </div>
-      </section>
+        <article class="map-card">
+          <a href="pages/map_4.html">
+            <img src="img/map_4.jpg" alt="Nelaimingi atsitikimai Kaune" />
+            <div class="map-card-content">
+              <span>Kepler.gl</span>
+              <h3>Nelaimingi atsitikimai Kaune</h3>
+              <p>Nelaimingų atsitikimų duomenų vizualizacija Kaune.</p>
+            </div>
+          </a>
+        </article>
 
-      <section class="map-section">
-        <div class="map-text">
-          <h2>Nelaimingi atsitikimai Kaune</h2>
-          <p>
-            Žemėlapyje pateikiami nelaimingų atsitikimų duomenys Kaune. Tokia
-            informacija gali padėti pastebėti pavojingesnes miesto vietas.
-          </p>
-        </div>
-        <div class="map-embed">
-          <iframe src="https://gisdominykas.github.io/1_praktinis/map_4.html" title="Nelaimingi atsitikimai Kaune"></iframe>
-        </div>
-      </section>
+        <article class="map-card">
+          <a href="pages/map_5.html">
+            <img src="img/map_5.jpg" alt="Geoportal žemėlapis Nr. 1" />
+            <div class="map-card-content">
+              <span>Geoportal</span>
+              <h3>Geoportal žemėlapis Nr. 1</h3>
+              <p>Pirmasis teminis Geoportal pagrindu sukurtas žemėlapis.</p>
+            </div>
+          </a>
+        </article>
 
-      <section class="map-section">
-        <div class="map-text">
-          <h2>Geoportal žemėlapis Nr. 1</h2>
-          <p>
-            Teminis žemėlapis, sukurtas naudojant Geoportal duomenis ir
-            pritaikytas erdvinių duomenų peržiūrai.
-          </p>
-        </div>
-        <div class="map-embed">
-          <iframe src="https://gisdominykas.github.io/2_praktinis/1_map.html" title="Geoportal žemėlapis 1"></iframe>
-        </div>
-      </section>
+        <article class="map-card">
+          <a href="pages/map_6.html">
+            <img src="img/map_6.jpg" alt="Geoportal žemėlapis Nr. 2" />
+            <div class="map-card-content">
+              <span>Geoportal</span>
+              <h3>Geoportal žemėlapis Nr. 2</h3>
+              <p>Antrasis teminis Geoportal žemėlapis.</p>
+            </div>
+          </a>
+        </article>
 
-      <section class="map-section">
-        <div class="map-text">
-          <h2>Geoportal žemėlapis Nr. 2</h2>
-          <p>
-            Antras teminis Geoportal žemėlapis, papildantis svetainėje pateiktų
-            interaktyvių žemėlapių rinkinį.
-          </p>
-        </div>
-        <div class="map-embed">
-          <iframe src="https://gisdominykas.github.io/2_praktinis/2_map.html" title="Geoportal žemėlapis 2"></iframe>
-        </div>
-      </section>
+        <article class="map-card">
+          <a href="pages/map_7.html">
+            <img src="img/map_7.jpg" alt="Pranešimų peržiūra" />
+            <div class="map-card-content">
+              <span>ArcGIS Online</span>
+              <h3>Pranešimų peržiūra</h3>
+              <p>Užregistruotų pranešimų ir objektų peržiūros žemėlapis.</p>
+            </div>
+          </a>
+        </article>
 
-      <section class="map-section">
-        <div class="map-text">
-          <h2>Pranešimų peržiūra</h2>
-          <p>
-            ArcGIS Online žemėlapis skirtas užregistruotų pranešimų ir objektų
-            peržiūrai.
-          </p>
-        </div>
-        <div class="map-embed">
-          <iframe src="https://gisdominykas.github.io/3_praktinis/pranesimu_perziura.html" title="Pranešimų peržiūra"></iframe>
-        </div>
-      </section>
+        <article class="map-card">
+          <a href="pages/map_8.html">
+            <img src="img/map_8.jpg" alt="Vieno objekto registravimas" />
+            <div class="map-card-content">
+              <span>ArcGIS Online</span>
+              <h3>Vieno objekto registravimas</h3>
+              <p>Taškinio objekto registravimui skirtas žemėlapis.</p>
+            </div>
+          </a>
+        </article>
 
-      <section class="map-section">
-        <div class="map-text">
-          <h2>Vieno objekto registravimas</h2>
-          <p>
-            Šiame žemėlapyje galima registruoti taškinį objektą ir pateikti
-            informaciją apie naują pranešimą.
-          </p>
-        </div>
-        <div class="map-embed">
-          <iframe src="https://gisdominykas.github.io/3_praktinis/pranesimu_registravimas_objektas.html" title="Vieno objekto registravimas"></iframe>
-        </div>
-      </section>
-
-      <section class="map-section">
-        <div class="map-text">
-          <h2>Plotinio objekto registravimas</h2>
-          <p>
-            Šis žemėlapis leidžia registruoti plotinius objektus, pažymint
-            teritoriją ir pateikiant informaciją apie ją.
-          </p>
-        </div>
-        <div class="map-embed">
-          <iframe src="https://gisdominykas.github.io/3_praktinis/pranesimu_registravimas_plotas.html" title="Plotinio objekto registravimas"></iframe>
-        </div>
-      </section>
+        <article class="map-card">
+          <a href="pages/map_9.html">
+            <img src="img/map_9.jpg" alt="Plotinio objekto registravimas" />
+            <div class="map-card-content">
+              <span>ArcGIS Online</span>
+              <h3>Plotinio objekto registravimas</h3>
+              <p>Plotinio objekto registravimui skirtas žemėlapis.</p>
+            </div>
+          </a>
+        </article>
+      </div>
     </main>
 
     <!-- ===== CONTACT CTA ===== -->
-    <!-- Trumpas kvietimas pereiti į kontaktų puslapį -->
+    <!-- Kvietimas pereiti į kontaktų puslapį -->
     <section class="contact">
       <div class="contact-card">
         <span class="contact-label">Kontaktai</span>
@@ -212,7 +192,7 @@
     </section>
 
     <!-- ===== FOOTER ===== -->
-    <!-- Apatinė svetainės dalis su papildoma informacija ir nuorodomis -->
+    <!-- Apatinė svetainės dalis -->
     <footer id="footer" class="footer">
       <div class="footer-grid">
         <div class="footer-col">
