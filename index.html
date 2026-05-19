@@ -16,6 +16,19 @@
   </head>
 
   <body>
+    <!-- ===== THEME TOGGLE ===== -->
+    <!-- Šis checkbox leidžia perjungti šviesų ir tamsų svetainės režimą -->
+    <!-- Kai checkbox pažymėtas, CSS pritaiko šviesaus režimo spalvas -->
+    <!-- JavaScript nereikalingas, nes režimas valdomas per CSS :checked selektorių -->
+    <input type="checkbox" id="theme-toggle" class="theme-toggle" />
+
+    <!-- Šis div apgaubia visą svetainės turinį -->
+    <!-- Tai reikalinga, kad CSS galėtų pakeisti visų vidinių elementų spalvas -->
+    <div class="site-wrapper">
+      <!-- Šis label veikia kaip matomas režimo perjungimo mygtukas -->
+      <!-- Paspaudus ant jo pažymimas arba nuimamas checkbox -->
+      <label for="theme-toggle" class="theme-switch">Šviesus / tamsus režimas</label>
+
     <!-- ===== NAV ===== -->
     <!-- Viršutinė navigacija -->
     <nav class="nav">
@@ -272,5 +285,6 @@
         <p>&copy; 2026 Kauno žemėlapiai — svetainė sukurta mokymosi tikslais.</p>
       </div>
     </footer>
+      </div>
   </body>
 </html>

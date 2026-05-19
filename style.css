@@ -40,6 +40,122 @@ img {
   object-fit: cover;
 }
 
+/* ===== THEME SYSTEM ===== */
+/* Ši dalis sukuria šviesaus / tamsaus režimo perjungimą be JavaScript */
+/* Tikras checkbox yra paslėptas, o vartotojas spaudžia gražiai suformatuotą label mygtuką */
+.theme-toggle {
+  display: none;
+}
+
+/* site-wrapper apgaubia visą svetainę */
+/* Jam suteikiamas fonas ir teksto spalva, kuriuos galima keisti pagal režimą */
+.site-wrapper {
+  min-height: 100vh;
+  background: #070b12;
+  color: #e5e7eb;
+  transition: background 0.25s, color 0.25s;
+}
+
+/* Matomas šviesaus / tamsaus režimo perjungimo mygtukas */
+.theme-switch {
+  position: fixed;
+  top: 1.1rem;
+  right: 3rem;
+  z-index: 50;
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.82);
+  color: #e5e7eb;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+/* Perjungimo mygtuko hover efektas */
+.theme-switch:hover {
+  background: #22c55e;
+  color: #04100a;
+  border-color: #22c55e;
+}
+
+/* Kai checkbox pažymėtas, įjungiamas šviesus režimas */
+.theme-toggle:checked + .site-wrapper {
+  background: #f8fafc;
+  color: #111827;
+}
+
+/* Šviesaus režimo perjungimo mygtuko spalvos */
+.theme-toggle:checked + .site-wrapper .theme-switch {
+  background: rgba(255, 255, 255, 0.9);
+  color: #111827;
+  border-color: rgba(15, 23, 42, 0.12);
+}
+
+/* Šviesiame režime pagrindiniai tekstai tampa tamsūs */
+.theme-toggle:checked + .site-wrapper .description h2,
+.theme-toggle:checked + .site-wrapper .section-title h2,
+.theme-toggle:checked + .site-wrapper .map-card-content h3,
+.theme-toggle:checked + .site-wrapper .page-header h1,
+.theme-toggle:checked + .site-wrapper .map-header h1,
+.theme-toggle:checked + .site-wrapper .creator-info h2,
+.theme-toggle:checked + .site-wrapper .form-wrapper h2 {
+  color: #111827;
+}
+
+/* Šviesiame režime aprašymo tekstai tampa pilki */
+.theme-toggle:checked + .site-wrapper .description p,
+.theme-toggle:checked + .site-wrapper .section-title p,
+.theme-toggle:checked + .site-wrapper .map-card-content p,
+.theme-toggle:checked + .site-wrapper .page-header p,
+.theme-toggle:checked + .site-wrapper .creator-info p,
+.theme-toggle:checked + .site-wrapper .form-wrapper p {
+  color: #4b5563;
+}
+
+/* Šviesiame režime kortelės tampa baltos */
+.theme-toggle:checked + .site-wrapper .map-card,
+.theme-toggle:checked + .site-wrapper .creator-info,
+.theme-toggle:checked + .site-wrapper .form-wrapper {
+  background: #ffffff;
+  border-color: #e5e7eb;
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.08);
+}
+
+/* Šviesiame režime vidinių puslapių antraštės tampa šviesios */
+.theme-toggle:checked + .site-wrapper .nav--solid,
+.theme-toggle:checked + .site-wrapper .page-header,
+.theme-toggle:checked + .site-wrapper .map-header {
+  background: #ffffff;
+  border-bottom-color: #e5e7eb;
+}
+
+/* Šviesiame režime navigacijos nuorodos tampa tamsios */
+.theme-toggle:checked + .site-wrapper .nav-links--dark a,
+.theme-toggle:checked + .site-wrapper .page-back {
+  color: #374151;
+}
+
+/* Šviesiame režime kontaktų kortelė išlieka išskirta, bet tampa švelnesnė */
+.theme-toggle:checked + .site-wrapper .contact-card {
+  background: linear-gradient(135deg, #ffffff, #dcfce7);
+  color: #111827;
+  border-color: #bbf7d0;
+}
+
+.theme-toggle:checked + .site-wrapper .contact h2 {
+  color: #111827;
+}
+
+.theme-toggle:checked + .site-wrapper .contact p {
+  color: #4b5563;
+}
+
+/* Šviesiame režime footer vis tiek paliekamas tamsus, kad aiškiai užbaigtų svetainę */
+
 /* ===== NAV ===== */
 /* Viršutinė navigacijos juosta */
 .nav {

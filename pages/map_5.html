@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
+    <!-- ===== THEME TOGGLE ===== -->
+    <!-- Šis checkbox leidžia ir žemėlapio puslapyje perjungti šviesų / tamsų režimą -->
+    <input type="checkbox" id="theme-toggle" class="theme-toggle" />
+
+    <!-- site-wrapper apgaubia visą puslapį, kad CSS galėtų pakeisti spalvas -->
+    <div class="site-wrapper">
+      <label for="theme-toggle" class="theme-switch">Šviesus / tamsus režimas</label>
+
     <nav class="nav nav--solid">
       <ul class="nav-links nav-links--dark">
         <li><a href="../index.html">Pradžia</a></li>
@@ -29,5 +37,6 @@
     <main class="map-page-embed">
       <iframe src="https://gisdominykas.github.io/2_praktinis/1_map.html" title="Geoportal žemėlapis Nr. 1"></iframe>
     </main>
+    </div>
   </body>
 </html>
