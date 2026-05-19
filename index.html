@@ -77,15 +77,44 @@
     <!-- Pagrindinė žemėlapių kortelių dalis -->
     <main id="maps" class="maps">
       <div class="section-title">
+        <!-- Mažas tekstas virš pagrindinės sekcijos antraštės -->
         <span>Interaktyvūs žemėlapiai</span>
+
+        <!-- Pagrindinė žemėlapių galerijos antraštė -->
         <h2>Žemėlapių galerija</h2>
+
+        <!-- Trumpas paaiškinimas, ką vartotojas gali daryti šioje sekcijoje -->
         <p>Pasirinkite žemėlapį ir atidarykite jį atskirame puslapyje.</p>
       </div>
 
-      <!-- Žemėlapių kortelių tinklelis -->
-      <div class="map-grid">
+      <!-- ===== FILTER ===== -->
+      <!-- Filtras sukurtas tik su HTML ir CSS, be JavaScript -->
+      <!-- Radio input elementai leidžia pasirinkti vieną kategoriją -->
+      <!-- Label elementai atrodo kaip mygtukai, nes jų išvaizda aprašyta CSS faile -->
+      <!-- Kai pasirenkama kategorija, CSS paslepia nereikalingas korteles -->
+      <div class="map-filter">
+        <!-- Pasirinkus šį mygtuką rodomi visi žemėlapiai -->
+        <input type="radio" name="map-filter" id="filter-all" checked />
+        <label for="filter-all">Visi</label>
+
+        <!-- Pasirinkus šį mygtuką rodomi tik Kepler.gl žemėlapiai -->
+        <input type="radio" name="map-filter" id="filter-kepler" />
+        <label for="filter-kepler">Kepler.gl</label>
+
+        <!-- Pasirinkus šį mygtuką rodomi tik Geoportal žemėlapiai -->
+        <input type="radio" name="map-filter" id="filter-geoportal" />
+        <label for="filter-geoportal">Geoportal</label>
+
+        <!-- Pasirinkus šį mygtuką rodomi tik ArcGIS Online žemėlapiai -->
+        <input type="radio" name="map-filter" id="filter-arcgis" />
+        <label for="filter-arcgis">ArcGIS Online</label>
+
+        <!-- Žemėlapių kortelių tinklelis -->
+        <!-- Jis yra filtro bloko viduje, kad CSS galėtų valdyti kortelių rodymą -->
+        <div class="map-grid">
         <!-- Kiekviena kortelė yra nuoroda į atskirą žemėlapio puslapį -->
-        <article class="map-card">
+        <!-- Kepler.gl kategorijos kortelė -->
+        <article class="map-card kepler-card">
           <a href="pages/map_1.html">
             <img src="img/map_1.jpg" alt="Kauno svarbios vietos" />
             <div class="map-card-content">
@@ -96,7 +125,8 @@
           </a>
         </article>
 
-        <article class="map-card">
+        <!-- Kepler.gl kategorijos kortelė -->
+        <article class="map-card kepler-card">
           <a href="pages/map_2.html">
             <img src="img/map_2.jpg" alt="Žemės drebėjimai visame pasaulyje" />
             <div class="map-card-content">
@@ -107,7 +137,8 @@
           </a>
         </article>
 
-        <article class="map-card">
+        <!-- Kepler.gl kategorijos kortelė -->
+        <article class="map-card kepler-card">
           <a href="pages/map_3.html">
             <img src="img/map_3.jpg" alt="Verslui naudingas žemėlapis Kaune" />
             <div class="map-card-content">
@@ -118,7 +149,8 @@
           </a>
         </article>
 
-        <article class="map-card">
+        <!-- Kepler.gl kategorijos kortelė -->
+        <article class="map-card kepler-card">
           <a href="pages/map_4.html">
             <img src="img/map_4.jpg" alt="Nelaimingi atsitikimai Kaune" />
             <div class="map-card-content">
@@ -129,7 +161,8 @@
           </a>
         </article>
 
-        <article class="map-card">
+        <!-- Geoportal kategorijos kortelė -->
+        <article class="map-card geoportal-card">
           <a href="pages/map_5.html">
             <img src="img/map_5.jpg" alt="Geoportal žemėlapis Nr. 1" />
             <div class="map-card-content">
@@ -140,7 +173,8 @@
           </a>
         </article>
 
-        <article class="map-card">
+        <!-- Geoportal kategorijos kortelė -->
+        <article class="map-card geoportal-card">
           <a href="pages/map_6.html">
             <img src="img/map_6.jpg" alt="Geoportal žemėlapis Nr. 2" />
             <div class="map-card-content">
@@ -151,7 +185,8 @@
           </a>
         </article>
 
-        <article class="map-card">
+        <!-- ArcGIS Online kategorijos kortelė -->
+        <article class="map-card arcgis-card">
           <a href="pages/map_7.html">
             <img src="img/map_7.jpg" alt="Pranešimų peržiūra" />
             <div class="map-card-content">
@@ -162,7 +197,8 @@
           </a>
         </article>
 
-        <article class="map-card">
+        <!-- ArcGIS Online kategorijos kortelė -->
+        <article class="map-card arcgis-card">
           <a href="pages/map_8.html">
             <img src="img/map_8.jpg" alt="Vieno objekto registravimas" />
             <div class="map-card-content">
@@ -173,7 +209,8 @@
           </a>
         </article>
 
-        <article class="map-card">
+        <!-- ArcGIS Online kategorijos kortelė -->
+        <article class="map-card arcgis-card">
           <a href="pages/map_9.html">
             <img src="img/map_9.jpg" alt="Plotinio objekto registravimas" />
             <div class="map-card-content">
@@ -182,7 +219,7 @@
               <p>Plotinio objekto registravimui skirtas žemėlapis.</p>
             </div>
           </a>
-        </article>
+        </article>        </div>
       </div>
     </main>
 

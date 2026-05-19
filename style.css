@@ -244,6 +244,74 @@ img {
   color: #94a3b8;
 }
 
+/* ===== MAP FILTER ===== */
+/* Filtravimo blokas yra virš žemėlapių kortelių */
+/* Jame vartotojas gali pasirinkti, kokios kategorijos žemėlapius matyti */
+.map-filter {
+  width: 100%;
+}
+
+/* Tikrieji radio mygtukai paslepiami */
+/* Jie vis tiek veikia, bet vartotojas mato gražesnius label mygtukus */
+.map-filter input {
+  display: none;
+}
+
+/* Filtravimo mygtukų išdėstymas */
+/* Kadangi input ir label yra vienas po kito, label tampa matomu mygtuku */
+.map-filter label {
+  display: inline-block;
+  margin: 0 0.35rem 2rem 0;
+  padding: 0.65rem 1.25rem;
+  border-radius: 999px;
+  background: #0f172a;
+  color: #cbd5e1;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+/* Efektas užvedus pelę ant filtro mygtuko */
+.map-filter label:hover {
+  transform: translateY(-1px);
+  border-color: rgba(34, 197, 94, 0.45);
+  color: #ffffff;
+}
+
+/* Pažymėto filtro mygtuko stilius */
+/* + reiškia artimiausią po input einantį label */
+#filter-all:checked + label,
+#filter-kepler:checked + label,
+#filter-geoportal:checked + label,
+#filter-arcgis:checked + label {
+  background: #22c55e;
+  color: #04100a;
+  border-color: #22c55e;
+}
+
+/* Kai pasirenkamas Kepler.gl filtras, paslepiamos ne Kepler.gl kortelės */
+#filter-kepler:checked ~ .map-grid .geoportal-card,
+#filter-kepler:checked ~ .map-grid .arcgis-card {
+  display: none;
+}
+
+/* Kai pasirenkamas Geoportal filtras, paslepiamos ne Geoportal kortelės */
+#filter-geoportal:checked ~ .map-grid .kepler-card,
+#filter-geoportal:checked ~ .map-grid .arcgis-card {
+  display: none;
+}
+
+/* Kai pasirenkamas ArcGIS Online filtras, paslepiamos ne ArcGIS Online kortelės */
+#filter-arcgis:checked ~ .map-grid .kepler-card,
+#filter-arcgis:checked ~ .map-grid .geoportal-card {
+  display: none;
+}
+
+/* Kai pasirenkamas Visi filtras, niekas neslepiama */
+/* Tam papildomos taisyklės nereikia, nes visos kortelės pagal nutylėjimą rodomos */
+
 /* ===== MAP GALLERY ===== */
 /* Pagrindinė žemėlapių galerijos sekcija */
 .maps {
@@ -253,6 +321,8 @@ img {
 }
 
 /* Kortelių tinklelis */
+/* Kortelių tinklelis */
+/* display: grid leidžia korteles sudėti į tvarkingus stulpelius */
 .map-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -260,6 +330,8 @@ img {
 }
 
 /* Viena žemėlapio kortelė */
+/* Viena žemėlapio kortelė */
+/* Kortelė turi foną, rėmelį, šešėlį ir užapvalintus kampus */
 .map-card {
   background: #0f172a;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -283,6 +355,8 @@ img {
 }
 
 /* Žemėlapio peržiūros paveikslėlis */
+/* Kortelės viršuje rodomas žemėlapio peržiūros paveikslėlis */
+/* object-fit: cover neleidžia paveikslėliui išsikraipyti */
 .map-card img {
   height: 220px;
   object-fit: cover;
@@ -290,6 +364,8 @@ img {
 }
 
 /* Kortelės tekstinė dalis */
+/* Kortelės tekstinė dalis */
+/* Čia yra kategorija, pavadinimas ir trumpas aprašymas */
 .map-card-content {
   padding: 1.35rem;
 }
