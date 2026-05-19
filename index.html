@@ -8,7 +8,7 @@
     <!-- Svetainės pritaikymas skirtingiems ekranams -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Puslapio pavadinimas naršyklės kortelėje -->
+    <!-- Puslapio pavadinimas naršyklės puslapyje -->
     <title>Kauno žemėlapiai</title>
 
     <!-- Prijungiamas CSS failas -->
@@ -88,7 +88,7 @@
     </section>
 
     <!-- ===== MAPS ===== -->
-    <!-- Pagrindinė žemėlapių kortelių dalis -->
+    <!-- Pagrindinė žemėlapių puslapių dalis -->
     <main id="maps" class="maps">
       <div class="section-title">
         <!-- Mažas tekstas virš pagrindinės sekcijos antraštės -->
@@ -141,7 +141,7 @@
       <!-- Filtras sukurtas tik su HTML ir CSS, be JavaScript -->
       <!-- Radio input elementai leidžia pasirinkti vieną kategoriją -->
       <!-- Label elementai atrodo kaip mygtukai, nes jų išvaizda aprašyta CSS faile -->
-      <!-- Kai pasirenkama kategorija, CSS paslepia nereikalingas korteles -->
+      <!-- Kai pasirenkama kategorija, CSS paslepia nereikalingas puslapius -->
       <div class="map-filter">
         <!-- Pasirinkus šį mygtuką rodomi visi žemėlapiai -->
         <input type="radio" name="map-filter" id="filter-all" checked />
@@ -159,11 +159,11 @@
         <input type="radio" name="map-filter" id="filter-arcgis" />
         <label for="filter-arcgis">ArcGIS Online</label>
 
-        <!-- Žemėlapių kortelių tinklelis -->
-        <!-- Jis yra filtro bloko viduje, kad CSS galėtų valdyti kortelių rodymą -->
+        <!-- Žemėlapių puslapių tinklelis -->
+        <!-- Jis yra filtro bloko viduje, kad CSS galėtų valdyti puslapių rodymą -->
         <div class="map-grid">
-        <!-- Kiekviena kortelė yra nuoroda į atskirą žemėlapio puslapį -->
-        <!-- Kepler.gl kategorijos kortelė -->
+        <!-- Kiekvienas puslapis yra nuoroda į atskirą žemėlapio puslapį -->
+        <!-- Kepler.gl kategorijos puslapio -->
         <article class="map-card kepler-card" data-title="Kauno svarbios vietos">
           <a href="pages/map_1.html">
             <img src="img/map_1.jpg" alt="Kauno svarbios vietos" />
@@ -175,7 +175,7 @@
           </a>
         </article>
 
-        <!-- Kepler.gl kategorijos kortelė -->
+        <!-- Kepler.gl kategorijos puslapis -->
         <article class="map-card kepler-card" data-title="Žemės drebėjimai visame pasaulyje">
           <a href="pages/map_2.html">
             <img src="img/map_2.jpg" alt="Žemės drebėjimai visame pasaulyje" />
@@ -187,7 +187,7 @@
           </a>
         </article>
 
-        <!-- Kepler.gl kategorijos kortelė -->
+        <!-- Kepler.gl kategorijos puslapis -->
         <article class="map-card kepler-card" data-title="Verslui naudingas žemėlapis Kaune">
           <a href="pages/map_3.html">
             <img src="img/map_3.jpg" alt="Verslui naudingas žemėlapis Kaune" />
@@ -199,7 +199,7 @@
           </a>
         </article>
 
-        <!-- Kepler.gl kategorijos kortelė -->
+        <!-- Kepler.gl kategorijos puslapis -->
         <article class="map-card kepler-card" data-title="Nelaimingi atsitikimai Kaune">
           <a href="pages/map_4.html">
             <img src="img/map_4.jpg" alt="Nelaimingi atsitikimai Kaune" />
@@ -211,7 +211,7 @@
           </a>
         </article>
 
-        <!-- Geoportal kategorijos kortelė -->
+        <!-- Geoportal kategorijos puslapis -->
         <article class="map-card geoportal-card" data-title="Geoportal žemėlapis Nr. 1">
           <a href="pages/map_5.html">
             <img src="img/map_5.jpg" alt="Geoportal žemėlapis Nr. 1" />
@@ -223,7 +223,7 @@
           </a>
         </article>
 
-        <!-- Geoportal kategorijos kortelė -->
+        <!-- Geoportal kategorijos puslapis -->
         <article class="map-card geoportal-card" data-title="Geoportal žemėlapis Nr. 2">
           <a href="pages/map_6.html">
             <img src="img/map_6.jpg" alt="Geoportal žemėlapis Nr. 2" />
@@ -235,7 +235,7 @@
           </a>
         </article>
 
-        <!-- ArcGIS Online kategorijos kortelė -->
+        <!-- ArcGIS Online kategorijos puslapis -->
         <article class="map-card arcgis-card" data-title="Pranešimų peržiūra">
           <a href="pages/map_7.html">
             <img src="img/map_7.jpg" alt="Pranešimų peržiūra" />
@@ -247,7 +247,7 @@
           </a>
         </article>
 
-        <!-- ArcGIS Online kategorijos kortelė -->
+        <!-- ArcGIS Online kategorijos puslapis -->
         <article class="map-card arcgis-card" data-title="Vieno objekto registravimas">
           <a href="pages/map_8.html">
             <img src="img/map_8.jpg" alt="Vieno objekto registravimas" />
@@ -259,7 +259,7 @@
           </a>
         </article>
 
-        <!-- ArcGIS Online kategorijos kortelė -->
+        <!-- ArcGIS Online kategorijos puslapis -->
         <article class="map-card arcgis-card" data-title="Plotinio objekto registravimas">
           <a href="pages/map_9.html">
             <img src="img/map_9.jpg" alt="Plotinio objekto registravimas" />
@@ -275,7 +275,7 @@
 
     <!-- ===== CREATOR / PROJECT BLOCK ===== -->
     <!-- Ši dalis pristato svetainės kūrėją ir patį projektą -->
-    <!-- Nuotraukos nebelieka, todėl tekstas pateikiamas kaip atskira plati kortelė -->
+    <!-- Nuotraukos nebelieka, todėl tekstas pateikiamas kaip atskiras platus puslapis -->
     <!-- id="creator" reikalingas tam, kad navigacijos nuoroda galėtų nukelti į šią vietą -->
     <section id="creator" class="creator-section creator-section--text-only">
       <div class="creator-text">
@@ -349,8 +349,8 @@
       <a href="#" class="back-to-top">↑</a>
 
       <!-- ===== SEARCH SCRIPT ===== -->
-      <!-- Šis JavaScript kodas filtruoja korteles pagal įvestą tekstą -->
-      <!-- Kai vartotojas rašo paieškos laukelyje, tikrinami kortelių data-title atributai -->
+      <!-- Šis JavaScript kodas filtruoja puslapius pagal įvestą tekstą -->
+      <!-- Kai vartotojas rašo paieškos laukelyje, tikrinami puslapių data-title atributai -->
       <script>
         /* Randamas paieškos laukelis pagal jo id="mapSearch" */
         const searchInput = document.getElementById("mapSearch");
@@ -444,8 +444,8 @@
 
         /*
           Ši dalis paleidžiama kiekvieną kartą, kai vartotojas rašo paieškos laukelyje.
-          Jei pavadinimas atitinka arba yra panašus, kortelė rodoma.
-          Jei neatitinka, kortelė paslepiama.
+          Jei pavadinimas atitinka arba yra panašus, puslapis rodomas.
+          Jei neatitinka, puslapis paslepiamas.
         */
         searchInput.addEventListener("input", function () {
           const searchText = searchInput.value.trim();
