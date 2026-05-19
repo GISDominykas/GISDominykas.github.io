@@ -36,9 +36,33 @@
     <!-- ===== MAP EMBED ===== -->
     <!-- Šioje vietoje per iframe įkeliamas interaktyvus žemėlapis -->
     <main class="map-page-embed">
-      <!-- Mažas tekstas rodomas virš žemėlapio, kol iframe kraunasi -->
-      <p class="loading-text">Žemėlapis kraunamas...</p>
-      <iframe src="https://gisdominykas.github.io/1_praktinis/map_4.html" title="Nelaimingi atsitikimai Kaune"></iframe>
+      <!-- ===== LOADING TEXT ===== -->
+      <!-- Šis tekstas rodomas tol, kol iframe pilnai neužsikrauna -->
+      <p class="loading-text" id="loadingText">
+        Žemėlapis kraunamas...
+      </p>
+
+      <!-- ===== MAP IFRAME ===== -->
+      <!-- onload funkcija paleidžiama tada, kai žemėlapis pilnai užkraunamas -->
+      <!-- Tada paslepiamas loading tekstas -->
+      <iframe
+        src="https://gisdominykas.github.io/1_praktinis/map_4.html"
+        title="Nelaimingi atsitikimai Kaune"
+        onload="hideLoadingText()">
+      </iframe>
+
+      <!-- ===== JAVASCRIPT ===== -->
+      <!-- Funkcija paslepia tekstą po iframe užkrovimo -->
+      <script>
+        function hideLoadingText() {
+
+          /* Surandamas loading tekstas pagal id */
+          const loadingText = document.getElementById("loadingText");
+
+          /* Tekstas paslepiamas */
+          loadingText.style.display = "none";
+        }
+      </script>
     </main>
     </div>
   </body>
