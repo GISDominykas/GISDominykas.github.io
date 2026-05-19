@@ -31,32 +31,32 @@
     <!-- Šioje vietoje per iframe įkeliamas interaktyvus žemėlapis -->
     <main class="map-page-embed">
       <!-- ===== LOADING TEXT ===== -->
-        <!-- Šis tekstas rodomas tol, kol iframe pilnai neužsikrauna -->
-        <p class="loading-text" id="loadingText">
-          Žemėlapis kraunamas...
-        </p>
+<!-- Šis tekstas rodomas tol, kol iframe pilnai neužsikrauna -->
+<p class="loading-text" id="loadingText">
+  Žemėlapis kraunamas...
+</p>
 
-        <!-- ===== MAP IFRAME ===== -->
-        <!-- onload funkcija paleidžiama tada, kai žemėlapis pilnai užkraunamas -->
-        <!-- Tada paslepiamas loading tekstas -->
-        <iframe
-          src="https://gisdominykas.github.io/1_praktinis/map_1.html"
-          title="Kauno svarbios vietos"
-          onload="hideLoadingText()">
-        </iframe>
+<!-- ===== MAP IFRAME ===== -->
+<!-- onload funkcija paleidžiama tada, kai žemėlapis pilnai užkraunamas -->
+<!-- Tada paslepiamas loading tekstas -->
+<iframe
+  src="https://gisdominykas.github.io/1_praktinis/map_1.html"
+  title="Kauno svarbios vietos"
+  onload="hideLoadingText()">
+</iframe>
 
-        <!-- ===== JAVASCRIPT ===== -->
-        <!-- Funkcija paslepia tekstą po iframe užkrovimo -->
-        <script>
-          function hideLoadingText() {
+<!-- ===== JAVASCRIPT ===== -->
+<!-- Funkcija paslepia tekstą po iframe užkrovimo -->
+<script>
+  function hideLoadingText() {
 
-            /* Surandamas loading tekstas pagal id */
-            const loadingText = document.getElementById("loadingText");
+    /* Surandamas loading tekstas pagal id */
+    const loadingText = document.getElementById("loadingText");
 
-            /* Tekstas paslepiamas */
-            loadingText.style.display = "none";
-          }
-        </script>
+    /* Tekstas paslepiamas */
+    loadingText.style.display = "none";
+  }
+</script>
     </main>
     </div>
   </body>
