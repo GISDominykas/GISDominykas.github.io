@@ -102,7 +102,9 @@ img {
 .theme-toggle:checked + .site-wrapper .page-header h1,
 .theme-toggle:checked + .site-wrapper .map-header h1,
 .theme-toggle:checked + .site-wrapper .creator-info h2,
-.theme-toggle:checked + .site-wrapper .form-wrapper h2 {
+.theme-toggle:checked + .site-wrapper .form-wrapper h2,
+.theme-toggle:checked + .site-wrapper .map-instructions h3,
+.theme-toggle:checked + .site-wrapper .creator-text h2 {
   color: #111827;
 }
 
@@ -112,14 +114,21 @@ img {
 .theme-toggle:checked + .site-wrapper .map-card-content p,
 .theme-toggle:checked + .site-wrapper .page-header p,
 .theme-toggle:checked + .site-wrapper .creator-info p,
-.theme-toggle:checked + .site-wrapper .form-wrapper p {
+.theme-toggle:checked + .site-wrapper .form-wrapper p,
+.theme-toggle:checked + .site-wrapper .map-instructions p,
+.theme-toggle:checked + .site-wrapper .creator-text p,
+.theme-toggle:checked + .site-wrapper .map-search label,
+.theme-toggle:checked + .site-wrapper .category-stats span {
   color: #4b5563;
 }
 
 /* Šviesiame režime kortelės tampa baltos */
 .theme-toggle:checked + .site-wrapper .map-card,
 .theme-toggle:checked + .site-wrapper .creator-info,
-.theme-toggle:checked + .site-wrapper .form-wrapper {
+.theme-toggle:checked + .site-wrapper .form-wrapper,
+.theme-toggle:checked + .site-wrapper .map-instructions,
+.theme-toggle:checked + .site-wrapper .category-stats div,
+.theme-toggle:checked + .site-wrapper .creator-text {
   background: #ffffff;
   border-color: #e5e7eb;
   box-shadow: 0 8px 28px rgba(15, 23, 42, 0.08);
@@ -152,6 +161,12 @@ img {
 
 .theme-toggle:checked + .site-wrapper .contact p {
   color: #4b5563;
+}
+
+.theme-toggle:checked + .site-wrapper .map-search input {
+  background: #ffffff;
+  color: #111827;
+  border-color: #d1d5db;
 }
 
 /* Šviesiame režime footer vis tiek paliekamas tamsus, kad aiškiai užbaigtų svetainę */
@@ -360,6 +375,89 @@ img {
   color: #94a3b8;
 }
 
+/* ===== MAP INSTRUCTIONS ===== */
+/* Instrukcijų blokas paaiškina vartotojui, kaip naudotis svetaine */
+.map-instructions {
+  max-width: 850px;
+  margin: 0 auto 2rem;
+  padding: 1.4rem 1.6rem;
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+}
+
+.map-instructions h3 {
+  color: #f8fafc;
+  margin-bottom: 0.5rem;
+}
+
+.map-instructions p {
+  color: #94a3b8;
+  line-height: 1.7;
+}
+
+/* ===== CATEGORY STATS ===== */
+/* Kategorijų skaičių blokas rodo, kiek žemėlapių yra kiekvienoje grupėje */
+/* ===== CATEGORY STATS ===== */
+/* Kategorijų skaičių blokas rodo, kiek žemėlapių yra kiekvienoje grupėje */
+.category-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.category-stats div {
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.2rem;
+  text-align: center;
+}
+
+.category-stats strong {
+  display: block;
+  color: #22c55e;
+  font-size: 2rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.category-stats span {
+  color: #cbd5e1;
+  font-size: 0.92rem;
+}
+
+/* ===== MAP SEARCH ===== */
+/* Paieškos blokas leidžia ieškoti žemėlapio pagal pavadinimą */
+.map-search {
+  max-width: 640px;
+  margin: 0 auto 2rem;
+}
+
+.map-search label {
+  display: block;
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  margin-bottom: 0.55rem;
+}
+
+.map-search input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #0f172a;
+  color: #f8fafc;
+  outline: none;
+}
+
+.map-search input:focus {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.15);
+}
+
 /* ===== MAP FILTER ===== */
 /* Filtravimo blokas yra virš žemėlapių kortelių */
 /* Jame vartotojas gali pasirinkti, kokios kategorijos žemėlapius matyti */
@@ -532,6 +630,76 @@ img {
   background: #111827;
 }
 
+
+/* ===== CREATOR SECTION ===== */
+/* Kūrėjo ir projekto aprašymo blokas */
+.creator-section {
+  max-width: 1100px;
+  margin: 0 auto 5rem;
+  padding: 0 3rem;
+}
+
+/* Kai kūrėjo blokas yra tik tekstinis, jam nereikia dviejų stulpelių */
+.creator-section--text-only {
+  display: block;
+}
+
+/* Kūrėjo / projekto tekstinė kortelė */
+.creator-text {
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 2rem;
+}
+
+.creator-text span {
+  display: inline-block;
+  color: #22c55e;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.7rem;
+}
+
+.creator-text h2 {
+  color: #f8fafc;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.creator-text p {
+  color: #94a3b8;
+  margin-bottom: 1rem;
+}
+
+/* ===== BACK TO TOP ===== */
+/* Fiksuotas mygtukas dešinėje apačioje grąžina į puslapio viršų */
+.back-to-top {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 60;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #22c55e;
+  color: #04100a;
+  font-size: 1.25rem;
+  font-weight: 800;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+}
+
+/* ===== LOADING TEXT ===== */
+/* Tekstas virš iframe, informuojantis kad žemėlapis kraunamas */
+.loading-text {
+  color: #94a3b8;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+}
 
 /* ===== CONTACT ===== */
 /* Kontaktų kvietimo blokas */
@@ -757,6 +925,11 @@ img {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .category-stats,
+  .creator-section {
+    grid-template-columns: 1fr;
+  }
+
   .contact-page {
     grid-template-columns: 1fr;
   }
@@ -867,5 +1040,19 @@ img {
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .category-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .creator-section {
+    padding: 0 1.5rem;
+  }
+
+  .theme-switch {
+    right: 1.5rem;
+    top: auto;
+    bottom: 4.5rem;
   }
 }

@@ -36,6 +36,7 @@
         <li><a href="#" class="active">Pradžia</a></li>
         <li><a href="#about">Apie</a></li>
         <li><a href="#maps">Žemėlapiai</a></li>
+        <li><a href="#creator">Kūrėjas</a></li>
         <li><a href="kontaktai.html">Kontaktai</a></li>
       </ul>
     </nav>
@@ -58,7 +59,7 @@
           Lankytojai gali lengvai naršyti tarp skirtingų temų, peržiūrėti
           pranešimus, registruoti objektus bei naudotis interaktyviomis
           funkcijomis. Pagrindiniame puslapyje visi žemėlapiai pateikiami
-          aiškiose peržiūros kortelėse, todėl norimą informaciją galima pasiekti
+          aiškiose peržiūros puslapiuose, todėl norimą informaciją galima pasiekti
           greitai ir patogiai.
         </p>
 
@@ -100,6 +101,42 @@
         <p>Pasirinkite žemėlapį ir atidarykite jį atskirame puslapyje.</p>
       </div>
 
+      <!-- ===== MAP INSTRUCTIONS ===== -->
+      <!-- Trumpa instrukcija vartotojui, kaip naudotis žemėlapių galerija -->
+      <section class="map-instructions">
+        <h3>Kaip naudotis žemėlapiais?</h3>
+        <p>
+          Pasirinkite norimą kategoriją, naudokite paiešką pagal pavadinimą ir
+          spauskite ant žemėlapio puslapio. Atsidariusiame puslapyje matysite
+          interaktyvų žemėlapį, kurį galėsite priartinti, nutolinti ir tyrinėti.
+        </p>
+      </section>
+
+      <!-- ===== CATEGORY STATS ===== -->
+      <!-- Šis blokas parodo, kiek žemėlapių yra kiekvienoje kategorijoje -->
+      <section class="category-stats">
+        <div>
+          <strong>4</strong>
+          <span>Kepler.gl žemėlapiai</span>
+        </div>
+        <div>
+          <strong>2</strong>
+          <span>Geoportal žemėlapiai</span>
+        </div>
+        <div>
+          <strong>3</strong>
+          <span>ArcGIS Online žemėlapiai</span>
+        </div>
+      </section>
+
+      <!-- ===== SEARCH ===== -->
+      <!-- Paieškos laukelis leidžia rasti žemėlapį pagal pavadinimą -->
+      <!-- Funkcionalumas valdomas puslapio apačioje esančiu JavaScript kodu -->
+      <div class="map-search">
+        <label for="mapSearch">Paieška pagal žemėlapio pavadinimą</label>
+        <input type="text" id="mapSearch" placeholder="Pvz. Kauno svarbios vietos" />
+      </div>
+
       <!-- ===== FILTER ===== -->
       <!-- Filtras sukurtas tik su HTML ir CSS, be JavaScript -->
       <!-- Radio input elementai leidžia pasirinkti vieną kategoriją -->
@@ -127,7 +164,7 @@
         <div class="map-grid">
         <!-- Kiekviena kortelė yra nuoroda į atskirą žemėlapio puslapį -->
         <!-- Kepler.gl kategorijos kortelė -->
-        <article class="map-card kepler-card">
+        <article class="map-card kepler-card" data-title="Kauno svarbios vietos">
           <a href="pages/map_1.html">
             <img src="img/map_1.jpg" alt="Kauno svarbios vietos" />
             <div class="map-card-content">
@@ -139,7 +176,7 @@
         </article>
 
         <!-- Kepler.gl kategorijos kortelė -->
-        <article class="map-card kepler-card">
+        <article class="map-card kepler-card" data-title="Žemės drebėjimai visame pasaulyje">
           <a href="pages/map_2.html">
             <img src="img/map_2.jpg" alt="Žemės drebėjimai visame pasaulyje" />
             <div class="map-card-content">
@@ -151,7 +188,7 @@
         </article>
 
         <!-- Kepler.gl kategorijos kortelė -->
-        <article class="map-card kepler-card">
+        <article class="map-card kepler-card" data-title="Verslui naudingas žemėlapis Kaune">
           <a href="pages/map_3.html">
             <img src="img/map_3.jpg" alt="Verslui naudingas žemėlapis Kaune" />
             <div class="map-card-content">
@@ -163,7 +200,7 @@
         </article>
 
         <!-- Kepler.gl kategorijos kortelė -->
-        <article class="map-card kepler-card">
+        <article class="map-card kepler-card" data-title="Nelaimingi atsitikimai Kaune">
           <a href="pages/map_4.html">
             <img src="img/map_4.jpg" alt="Nelaimingi atsitikimai Kaune" />
             <div class="map-card-content">
@@ -175,7 +212,7 @@
         </article>
 
         <!-- Geoportal kategorijos kortelė -->
-        <article class="map-card geoportal-card">
+        <article class="map-card geoportal-card" data-title="Geoportal žemėlapis Nr. 1">
           <a href="pages/map_5.html">
             <img src="img/map_5.jpg" alt="Geoportal žemėlapis Nr. 1" />
             <div class="map-card-content">
@@ -187,7 +224,7 @@
         </article>
 
         <!-- Geoportal kategorijos kortelė -->
-        <article class="map-card geoportal-card">
+        <article class="map-card geoportal-card" data-title="Geoportal žemėlapis Nr. 2">
           <a href="pages/map_6.html">
             <img src="img/map_6.jpg" alt="Geoportal žemėlapis Nr. 2" />
             <div class="map-card-content">
@@ -199,7 +236,7 @@
         </article>
 
         <!-- ArcGIS Online kategorijos kortelė -->
-        <article class="map-card arcgis-card">
+        <article class="map-card arcgis-card" data-title="Pranešimų peržiūra">
           <a href="pages/map_7.html">
             <img src="img/map_7.jpg" alt="Pranešimų peržiūra" />
             <div class="map-card-content">
@@ -211,7 +248,7 @@
         </article>
 
         <!-- ArcGIS Online kategorijos kortelė -->
-        <article class="map-card arcgis-card">
+        <article class="map-card arcgis-card" data-title="Vieno objekto registravimas">
           <a href="pages/map_8.html">
             <img src="img/map_8.jpg" alt="Vieno objekto registravimas" />
             <div class="map-card-content">
@@ -223,7 +260,7 @@
         </article>
 
         <!-- ArcGIS Online kategorijos kortelė -->
-        <article class="map-card arcgis-card">
+        <article class="map-card arcgis-card" data-title="Plotinio objekto registravimas">
           <a href="pages/map_9.html">
             <img src="img/map_9.jpg" alt="Plotinio objekto registravimas" />
             <div class="map-card-content">
@@ -235,6 +272,26 @@
         </article>        </div>
       </div>
     </main>
+
+    <!-- ===== CREATOR / PROJECT BLOCK ===== -->
+    <!-- Ši dalis pristato svetainės kūrėją ir patį projektą -->
+    <!-- Nuotraukos nebelieka, todėl tekstas pateikiamas kaip atskira plati kortelė -->
+    <!-- id="creator" reikalingas tam, kad navigacijos nuoroda galėtų nukelti į šią vietą -->
+    <section id="creator" class="creator-section creator-section--text-only">
+      <div class="creator-text">
+        <span>Apie projektą</span>
+        <h2>Kauno žemėlapių svetainė</h2>
+        <p>
+          Projektas sukurtas siekiant vienoje vietoje pateikti skirtingus
+          interaktyvius žemėlapius ir pademonstruoti, kaip HTML, CSS ir iframe
+          technologijos gali būti naudojamos GIS turinio publikavimui internete.
+        </p>
+        <p>
+          Svetainės kūrėjas: Dominykas. Projektas parengtas mokymosi tikslais.
+        </p>
+        <a href="https://github.com/gisdominykas" target="_blank" class="btn btn-primary">GitHub projektas</a>
+      </div>
+    </section>
 
     <!-- ===== CONTACT CTA ===== -->
     <!-- Kvietimas pereiti į kontaktų puslapį -->
@@ -277,6 +334,7 @@
             <li><a href="https://kepler.gl" target="_blank">Kepler.gl</a></li>
             <li><a href="https://www.geoportal.lt" target="_blank">Geoportal.lt</a></li>
             <li><a href="https://www.arcgis.com" target="_blank">ArcGIS Online</a></li>
+            <li><a href="https://github.com/gisdominykas" target="_blank">GitHub projektas</a></li>
           </ul>
         </div>
       </div>
@@ -285,6 +343,124 @@
         <p>&copy; 2026 Kauno žemėlapiai — svetainė sukurta mokymosi tikslais.</p>
       </div>
     </footer>
-      </div>
+
+      <!-- ===== BACK TO TOP ===== -->
+      <!-- Mygtukas grąžina vartotoją į svetainės viršų -->
+      <a href="#" class="back-to-top">↑</a>
+
+      <!-- ===== SEARCH SCRIPT ===== -->
+      <!-- Šis JavaScript kodas filtruoja korteles pagal įvestą tekstą -->
+      <!-- Kai vartotojas rašo paieškos laukelyje, tikrinami kortelių data-title atributai -->
+      <script>
+        /* Randamas paieškos laukelis pagal jo id="mapSearch" */
+        const searchInput = document.getElementById("mapSearch");
+
+        /* Surandamos visos žemėlapių puslapiai, kurie turi klasę .map-card */
+        const mapCards = document.querySelectorAll(".map-card");
+
+        /*
+          Ši funkcija pašalina lietuviškas raides ir paverčia tekstą mažosiomis raidėmis.
+          Tai reikalinga, kad paieška būtų patogesnė.
+          Pvz. „Žemėlapis“ tampa „zemelapis“.
+        */
+        function normalizeText(text) {
+          return text
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[̀-ͯ]/g, "")
+            .replace(/ą/g, "a")
+            .replace(/č/g, "c")
+            .replace(/ę/g, "e")
+            .replace(/ė/g, "e")
+            .replace(/į/g, "i")
+            .replace(/š/g, "s")
+            .replace(/ų/g, "u")
+            .replace(/ū/g, "u")
+            .replace(/ž/g, "z");
+        }
+
+        /*
+          Ši funkcija apskaičiuoja, kiek redagavimo veiksmų reikia,
+          kad vienas žodis taptų kitu žodžiu.
+          Tai vadinama Levenshtein atstumu.
+          Pvz. „kiaunas“ ir „kaunas“ skiriasi tik viena papildoma raide,
+          todėl paieška vis tiek laikys rezultatą tinkamu.
+        */
+        function levenshteinDistance(firstWord, secondWord) {
+          const matrix = [];
+
+          for (let i = 0; i <= secondWord.length; i++) {
+            matrix[i] = [i];
+          }
+
+          for (let j = 0; j <= firstWord.length; j++) {
+            matrix[0][j] = j;
+          }
+
+          for (let i = 1; i <= secondWord.length; i++) {
+            for (let j = 1; j <= firstWord.length; j++) {
+              if (secondWord.charAt(i - 1) === firstWord.charAt(j - 1)) {
+                matrix[i][j] = matrix[i - 1][j - 1];
+              } else {
+                matrix[i][j] = Math.min(
+                  matrix[i - 1][j - 1] + 1,
+                  matrix[i][j - 1] + 1,
+                  matrix[i - 1][j] + 1
+                );
+              }
+            }
+          }
+
+          return matrix[secondWord.length][firstWord.length];
+        }
+
+        /*
+          Ši funkcija tikrina, ar vartotojo įvestas tekstas panašus į puslapių pavadinimą.
+          Pirmiausia tikrinamas paprastas sutapimas.
+          Jei jo nėra, tikrinami atskiri žodžiai ir leidžiamos mažos klaidos.
+        */
+        function fuzzyMatch(cardTitle, searchText) {
+          const normalizedTitle = normalizeText(cardTitle);
+          const normalizedSearch = normalizeText(searchText);
+
+          if (normalizedTitle.includes(normalizedSearch)) {
+            return true;
+          }
+
+          const titleWords = normalizedTitle.split(" ");
+          const searchWords = normalizedSearch.split(" ");
+
+          return searchWords.every(function (searchWord) {
+            return titleWords.some(function (titleWord) {
+              if (searchWord.length <= 2) {
+                return titleWord.includes(searchWord);
+              }
+
+              const allowedMistakes = searchWord.length <= 6 ? 1 : 2;
+              return levenshteinDistance(titleWord, searchWord) <= allowedMistakes;
+            });
+          });
+        }
+
+        /*
+          Ši dalis paleidžiama kiekvieną kartą, kai vartotojas rašo paieškos laukelyje.
+          Jei pavadinimas atitinka arba yra panašus, kortelė rodoma.
+          Jei neatitinka, kortelė paslepiama.
+        */
+        searchInput.addEventListener("input", function () {
+          const searchText = searchInput.value.trim();
+
+          mapCards.forEach(function (card) {
+            const title = card.dataset.title;
+
+            if (searchText === "" || fuzzyMatch(title, searchText)) {
+              card.style.display = "block";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+      </script>
+    </div>
   </body>
 </html>
